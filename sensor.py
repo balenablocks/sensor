@@ -124,7 +124,7 @@ if __name__ == "__main__":
     if mqtt_address != "none":
         print("Starting mqtt client, publishing to {0}:1883".format(mqtt_address))
         print("Using MQTT publish interval: {0} sec(s)".format(interval))
-        client = mqtt.Client()
+        client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1)
 
         if mqtt_username != "":
             client.username_pw_set(mqtt_username, mqtt_password)
